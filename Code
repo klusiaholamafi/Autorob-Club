@@ -1,0 +1,150 @@
+function Teleport(x,y,z,cd)
+    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+    NoEWait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
+    task.wait(cd)
+    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+end
+game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = 2
+function Teleport(x, y, z, cd)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x, y, z)
+	task.wait(cd)
+end
+function TweenTeleport(x, y, z, time)
+	local Position = Vector3.new(x, y, z)
+	local TweenService = game:GetService("TweenService")
+	local LocalPlayer = game.Players.LocalPlayer
+	local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
+	local Tween = TweenService:create(
+		Character.Humanoid.RootPart,
+		TweenInfo.new(time --[[ time ]]),
+		{ CFrame = CFrame.new(Position) }
+	)
+	Tween:Play()
+	task.wait(time)
+end
+
+localplayer = game.Players.LocalPlayer
+Char = localplayer.Character or workspace:FindFirstChild(localplayer.Name)
+HRP = Char and Char:FindFirstChild("HumanoidRootPart")
+if not Char or not HRP then
+end
+p = HRP.Position
+hrd = game.Players.LocalPlayer.Character.HumanoidRootPart
+x = 1691.64
+y = 73.82
+z = -1229.9
+hrd.CFrame = CFrame.new(p.x, 1100, p.z)
+wait(0.5)
+currentPos = Vector3.new(p.x, 1100, p.z)
+targetPos = Vector3.new(x, 1100, z)
+
+direction = (targetPos - currentPos).Unit
+distance = (targetPos - currentPos).Magnitude
+steps = math.floor(distance / 9)
+for i = 1, steps do
+	currentPos = currentPos + direction * 9
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentPos)
+	task.wait()
+end
+
+currentPos = targetPos
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentPos)
+task.wait(0.1)
+p = hrd.Position
+
+currentPos = Vector3.new(x, 1100, z)
+targetPos = Vector3.new(x, y, z)
+
+direction = (targetPos - currentPos).Unit
+distance = (targetPos - currentPos).Magnitude
+steps = math.floor(distance / 9)
+for i = 1, steps do
+	currentPos = currentPos + direction * 9
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(currentPos)
+	task.wait()
+end
+
+
+
+
+TweenTeleport(1701, 238, -1227, 1.25)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(100, 1, 100)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(1701, 235, -1227)
+Teleport(1701, 238, -1227, 0.1)
+Teleport(1701, 238, -1227, 0.25)
+Teleport(1701, 238, -1227, 0.25)
+task.wait(1)
+Plat:Destroy()
+TweenTeleport(1785, 229, -1223, 0.5)
+task.wait(0.5)
+TweenTeleport(1814, 227, -1190, 1)
+task.wait(1)
+Teleport(1834, 210, -1168, 0.01)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(10, 1, 10)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(PlayerRoot.CFrame.X, PlayerRoot.CFrame.Y-3, PlayerRoot.CFrame.Z)
+task.wait(0.5)
+Plat:Destroy()
+Teleport(1827, 210, -1159, 0.01)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(10, 1, 10)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(PlayerRoot.CFrame.X, PlayerRoot.CFrame.Y-3, PlayerRoot.CFrame.Z)
+task.wait(0.25)
+Plat:Destroy()
+Teleport(1827, 225, -1159, 0.25)
+task.wait(0.25)
+Teleport(1834, 225, -1167, 0.001)
+task.wait(25)
+Teleport(1827, 225, -1159, 0.25)
+Teleport(1827, 210, -1159, 0.1)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(10, 1, 10)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(PlayerRoot.CFrame.X, PlayerRoot.CFrame.Y-3, PlayerRoot.CFrame.Z)
+task.wait(0.25)
+Plat:Destroy()
+Teleport(1834, 210, -1168, 0.01)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(10, 1, 10)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(PlayerRoot.CFrame.X, PlayerRoot.CFrame.Y-3, PlayerRoot.CFrame.Z)
+task.wait(0.25)
+Plat:Destroy()
+Teleport(1814, 227, -1190, 1)
+TweenTeleport(1785, 229, -1223, 1)
+task.wait(1)
+TweenTeleport(1701, 238, -1227, 1)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(100, 1, 100)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(PlayerRoot.CFrame.X, PlayerRoot.CFrame.Y-3, PlayerRoot.CFrame.Z)
+task.wait(2)
+Plat:Destroy()
+TweenTeleport(149, 225, -187, 12)
+local PlayerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Plat = Instance.new("Part", game.Workspace)
+Plat.Anchored = true
+Plat.Size = Vector3.new(100, 1, 100)
+Plat.Transparency = 1
+Plat.CFrame = CFrame.new(PlayerRoot.CFrame.X, PlayerRoot.CFrame.Y-3, PlayerRoot.CFrame.Z)
+task.wait(2)
+Plat:Destroy()
+TweenTeleport(149, 25, -187, 4)
+TweenTeleport(73, 26, -157, 1)
